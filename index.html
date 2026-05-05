@@ -2,15 +2,17 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Douglas Cavalcante</title>
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #0f172a, #1e293b);
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 30px;
         }
 
         h1 {
@@ -18,84 +20,154 @@
             margin-bottom: 10px;
         }
 
-        p {
-            margin-bottom: 30px;
+        .subtitulo {
+            margin-bottom: 40px;
+            color: #cbd5e1;
+        }
+
+        .container-projetos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
 
         .projeto {
             background: #1e293b;
-            margin: 20px auto;
             padding: 20px;
-            border-radius: 12px;
-            max-width: 500px;
+            border-radius: 14px;
+            width: 320px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .projeto:hover {
+            transform: scale(1.03);
+        }
+
+        .projeto h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .galeria-imagens {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .imagem-projeto {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+
+        .projeto p {
+            color: #cbd5e1;
+            margin: 15px 0;
         }
 
         a {
             display: inline-block;
+            text-decoration: none;
             margin-top: 10px;
             padding: 10px 15px;
             background: #38bdf8;
             color: black;
             border-radius: 8px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         a:hover {
             background: #0ea5e9;
         }
 
-        .projeto:hover {
-            transform: scale(1.03);
-            transition: 0.3s;
+        .contato {
+            margin-top: 50px;
         }
 
-        .imagem-projeto {
-            width: 70%;
-            max-width: 500px;
-            border-radius: 10px;
-            margin: 15px auto;
-            display: block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .projeto {
+                width: 100%;
+                max-width: 350px;
+            }
         }
-        
     </style>
 </head>
 
 <body>
 
     <h1>🚀 Meu Portfólio</h1>
-    <p>Desenvolvedor em formação focado em HTML, CSS e lógica de programação.</p>
+    <p class="subtitulo">
+        Desenvolvedor em formação focado em HTML, CSS e lógica de programação.
+    </p>
 
-    <div class="projeto">
-        <h2>💻 Projetos em HTML e CSS</h2>
-        <img src="galeria.jfif" class="imagem-projeto">
-        <img src="html.png" class="imagem-projeto">
-        <p>Projetos práticos de desenvolvimento web.</p>
-        <a href="https://github.com/DouglasCavalcantee/Projetos-html-css.git">Ver no GitHub</a>
+    <div class="container-projetos">
+
+        <div class="projeto">
+            <h2>💻 HTML e CSS</h2>
+
+            <div class="galeria-imagens">
+                <img src="galeria.jfif" class="imagem-projeto" alt="Projeto galeria">
+                <img src="html.png" class="imagem-projeto" alt="Projeto HTML">
+            </div>
+
+            <p>Projetos práticos de desenvolvimento web.</p>
+            <a href="https://github.com/DouglasCavalcantee/Projetos-html-css.git" target="_blank">
+                Ver no GitHub
+            </a>
+        </div>
+
+        <div class="projeto">
+            <h2>🐍 Python</h2>
+
+            <div class="galeria-imagens">
+                <img src="fatorial.jfif" class="imagem-projeto" alt="Exercício fatorial">
+                <img src="fibonacci.jfif" class="imagem-projeto" alt="Exercício Fibonacci">
+                <img src="tabuada.jfif" class="imagem-projeto" alt="Exercício tabuada">
+                <img src="media.jfif" class="imagem-projeto" alt="Exercício média">
+            </div>
+
+            <p>Prática de lógica de programação.</p>
+            <a href="https://github.com/DouglasCavalcantee/estudos-python.git" target="_blank">
+                Ver no GitHub
+            </a>
+        </div>
+
+        <div class="projeto">
+            <h2>⚙️ C++</h2>
+
+            <div class="galeria-imagens">
+                <img src="media-c.jfif" class="imagem-projeto" alt="Exercício média em C++">
+                <img src="tabuada-c.jfif" class="imagem-projeto" alt="Exercício tabuada em C++">
+                <img src="pares-c.jfif" class="imagem-projeto" alt="Exercício pares em C++">
+                <img src="soma-c.jfif" class="imagem-projeto" alt="Exercício soma em C++">
+            </div>
+
+            <p>Exercícios focados em fundamentos.</p>
+            <a href="https://github.com/DouglasCavalcantee/exercicios-cpp.git" target="_blank">
+                Ver no GitHub
+            </a>
+        </div>
+
     </div>
 
-    <div class="projeto">
-        <h2>🐍 Exercícios em Python</h2>
-        <img src="fatorial.jfif" class="imagem-projeto">
-        <img src="fibonacci.jfif" class="imagem-projeto">
-        <img src="tabuada.jfif" class="imagem-projeto">
-        <img src="media.jfif" class="imagem-projeto">
-        <img src="soma.jfif" class="imagem-projeto">
-        <p>Prática de lógica de programação.</p>
-        <a href="https://github.com/DouglasCavalcantee/estudos-python.git">Ver no GitHub</a>
+    <div class="contato">
+        <h2>📞 Contato</h2>
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
     </div>
-
-    <div class="projeto">
-        <h2>⚙️ Exercícios em C++</h2>
-        <p>Exercícios focados em fundamentos.</p>
-        <a href="https://github.com/DouglasCavalcantee/exercicios-cpp.git">Ver no GitHub</a>
-    </div>
-      <h2>📞 Contato</h2>
-
-<p>
-    <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-</p>  
 
 </body>
 </html>
